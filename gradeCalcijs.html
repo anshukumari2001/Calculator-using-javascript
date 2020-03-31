@@ -1,0 +1,125 @@
+<html>
+    <head><title>Grade Calci In JS</title>
+    
+    <style>
+        .main
+        {
+            background-color: yellow;
+        }
+        .kammo
+        {
+        width: 550px;
+        margin: 0px auto;
+        margin-top: 10px;
+        margin-left: 600px;
+        
+        
+        }
+
+        .borders
+        {
+        
+            font-size: 25px;
+            border-radius: 8px;
+           padding: 5px 5px 5px 5px;
+            border: 2px black solid;
+            background-color:whitesmoke;
+
+        }
+
+        .accha
+        {
+            font-size: 55px;
+            font-weight: bold;
+            color: red;
+            text-align: center;
+            
+        }
+
+        .hello
+        {
+            font-size: 30px;
+            color:blue;
+            text-align: center;
+        
+        }
+    </style>
+    
+    
+    </head>
+    <body class="main">
+
+        <div class="accha">
+            <p>Student Grade Calcy</p>
+        </div>
+        <div class="kammo">
+        <input type="text" class="borders" placeholder="Mathematics" id ="bu1" ><br><br>
+        <input type="text" class="borders" placeholder="Biology" id ="bu2" ><br><br>
+        <input type="text" class="borders" placeholder="Physics" id ="bu3" ><br><br>
+        <input type="text" class="borders" placeholder="Chemistry" id ="bu4" ><br><br>
+        <input type="text" class="borders" placeholder="English" id ="bu5" ><br><br>
+        <input type="text" class="borders" placeholder="Physical Education" id ="bu6" ><br><br>
+
+        <input type="button"id ="bu" value="Show-Percentage" style="font-size: x-large; font-weight: bold; text-align: center"  onclick="calcy()">
+    
+    </div>
+
+    <div>
+        <p id="showdata" class="hello"></p>
+    </div>
+
+
+    <script>
+            let calcy= () =>{
+                  let math=document.getElementById('bu1').value;
+                  let bio=document.getElementById('bu2').value;
+                  let phy=document.getElementById('bu3').value;
+                  let chem=document.getElementById('bu4').value;
+                  let eng=document.getElementById('bu5').value;
+                  let physical=document.getElementById('bu6').value;
+                  let per="";
+                  let grade="";
+
+                  let totalMarks= parseFloat(math)+parseFloat(bio)+parseFloat(phy)+parseFloat(chem)+parseFloat(eng)+parseFloat(physical);
+                  alert('total marks is'+totalMarks);
+
+                  per=(totalMarks/600)*100;
+                  alert(per);
+
+                 if(per<=100 && per>=80)
+                 {
+                     grade='A';
+
+                 }
+                 else if(per<=79 && per>=60)
+                 {
+                     grade='B';
+
+                 }
+                 else if(per<=59 && per>=40)
+                 {
+                     grade='C';
+
+                 }
+                 else
+                 {
+                     grade='F';
+
+                 }
+
+                if(per>=39.5)
+                { document.getElementById('showdata').innerHTML= `Out of 600 Your Total marks is ${totalMarks} and Percentage is ${per}%. <br> Grade is ${grade}. <br> You are Pass.`}
+                else
+                { document.getElementById('showdata').innerHTML= `Out of 600 Your Total marks is ${totalMarks} and Percentage is ${per}%. <br> Grade is ${grade}.<br> You are Fail.`}
+
+
+            }
+
+
+
+    </script>
+
+
+
+    </body>
+</html>
